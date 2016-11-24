@@ -1,4 +1,4 @@
-package com.chiemy.demo.rxandroidstudydemo;
+package com.chiemy.demo.rxandroidstudydemo.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+
+import com.chiemy.demo.rxandroidstudydemo.R;
 
 import rx.Observable;
 import rx.Subscriber;

@@ -1,9 +1,12 @@
-package com.chiemy.demo.rxandroidstudydemo;
+package com.chiemy.demo.rxandroidstudydemo.ui;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
+
+import com.chiemy.demo.rxandroidstudydemo.R;
+import com.chiemy.demo.rxandroidstudydemo.TimeNodeSchedule;
 
 import java.util.Arrays;
 import java.util.List;
