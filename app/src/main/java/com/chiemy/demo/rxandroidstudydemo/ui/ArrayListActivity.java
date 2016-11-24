@@ -1,6 +1,9 @@
 package com.chiemy.demo.rxandroidstudydemo.ui;
 
+import android.view.View;
+
 import com.chiemy.demo.rxandroidstudydemo.adapter.ArrayListAdapter;
+import com.chiemy.demo.rxandroidstudydemo.holders.BaseViewHolder;
 
 import java.util.List;
 
@@ -10,7 +13,7 @@ import java.util.List;
  * Description:
  */
 
-public abstract class ArrayListActivity extends RecyclerViewActivity {
+public abstract class ArrayListActivity extends RecyclerViewActivity<String> {
     private ArrayListAdapter adapter;
 
     @Override
@@ -21,6 +24,10 @@ public abstract class ArrayListActivity extends RecyclerViewActivity {
     @Override
     protected void initData() {
         adapter.setData(getArrayList());
+    }
+
+    @Override
+    public void onViewHolderViewClick(BaseViewHolder holder, View view, int position, String s, String tag) {
     }
 
     protected abstract List<String> getArrayList();

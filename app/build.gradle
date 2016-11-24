@@ -33,4 +33,7 @@ dependencies {
 
     // https://github.com/fiskurgit/MarkdownView
     compile 'com.github.fiskurgit:MarkdownView:1.1.0'
+
+    // https://github.com/mukeshsolanki/MarkdownView-Android
+    // compile 'com.github.mukeshsolanki:MarkdownView-Android:1.0.3'
 }
