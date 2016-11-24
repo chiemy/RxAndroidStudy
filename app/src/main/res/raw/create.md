@@ -24,17 +24,17 @@ Subscriber subscriber= new Subscriber<Integer>() {
         Log.d(TAG, "Sequence complete.");
     }
 };
-//create方法默认不在任何特定的调度器上执行。
+// create方法默认不在任何特定的调度器上执行。
 Observable observable = Observable.create(new Observable.OnSubscribe<Integer>() {
-    //当Observable.subscribe被调用时（有订阅者时）执行call方法
+    // 当Observable.subscribe被调用时（有订阅者时）执行call方法
     @Override
     public void call(Subscriber<? super Integer> observer) {
         try {
-            //检查观察者的isUnsubscribed状态，以便在没有观察者的时候，让Observable停止发射数据或者做昂贵的运算
+            // 检查观察者的isUnsubscribed状态，以便在没有观察者的时候，让Observable停止发射数据或者做昂贵的运算
             for (int i = 1; i < 5; i++) {
                 if(i == 4){
-                    //取消订阅 (Unsubscribing),调用这个方法表示你不关心当前订阅的Observable了，
-                    //因此Observable可以选择停止发射新的数据项（如果没有其它观察者订阅）。
+                    // 取消订阅 (Unsubscribing),调用这个方法表示你不关心当前订阅的Observable了，
+                    // 因此Observable可以选择停止发射新的数据项（如果没有其它观察者订阅）。
                     subscriber.unsubscribe();
                 }
                 if (!observer.isUnsubscribed()) {
@@ -51,4 +51,12 @@ Observable observable = Observable.create(new Observable.OnSubscribe<Integer>() 
 } );
 //订阅
 observable.subscribe(subscriber);
+```
+
+输出:
+
+```
+Next: 1
+Next: 2
+Next: 3
 ```

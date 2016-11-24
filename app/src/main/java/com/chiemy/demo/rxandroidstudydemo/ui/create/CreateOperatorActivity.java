@@ -22,7 +22,7 @@ public class CreateOperatorActivity extends ArrayListActivity {
     @Override
     public void onViewHolderViewClick(BaseViewHolder holder, View view, int position, String s, String tag) {
         super.onViewHolderViewClick(holder, view, position, s, tag);
-        int resId = getResources().getIdentifier(s.toLowerCase(), "raw", getPackageName());
+        int resId = getResources().getIdentifier(s.toLowerCase().replace('/', '_'), "raw", getPackageName());
 
         Intent intent = MarkdownActivity
                 .IntentBuilder
